@@ -1,0 +1,7 @@
+interface:
+  display_name: "Bento PPT Generator"
+  short_description: "从主题或文档生成结构化 PPT 大纲与页级编排"
+  default_prompt: "Use $bento-ppt-generator to turn this topic or document into a structured PPT outline, slide plan, and Bento-ready slide system."
+
+policy:
+  allow_implicit_invocation: true

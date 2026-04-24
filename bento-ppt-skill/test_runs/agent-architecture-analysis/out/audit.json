@@ -1,0 +1,74 @@
+[
+  {
+    "source_slide_number": 4,
+    "page_role": "thesis",
+    "slide_index": 1,
+    "title": "代理真正难的是持续控制",
+    "layout": "nested_title_body",
+    "rhythm": "hero+nested-title-body+closure",
+    "top_focus_ok": true,
+    "contrast_budget_ok": true,
+    "size_variety_ok": true,
+    "nested_pattern_ok": true
+  },
+  {
+    "source_slide_number": 5,
+    "page_role": "comparison",
+    "slide_index": 2,
+    "title": "单环代理与分层代理的差异",
+    "layout": "dual_main_metrics",
+    "rhythm": "compare+metric-contrast",
+    "top_focus_ok": true,
+    "contrast_budget_ok": true,
+    "size_variety_ok": true,
+    "nested_pattern_ok": true
+  },
+  {
+    "source_slide_number": 6,
+    "page_role": "thesis",
+    "slide_index": 3,
+    "title": "ReAct 适合短链路强反馈",
+    "layout": "top_main_bar",
+    "rhythm": "hero+support+bottom-bar",
+    "top_focus_ok": true,
+    "contrast_budget_ok": true,
+    "size_variety_ok": true,
+    "nested_pattern_ok": true
+  },
+  {
+    "source_slide_number": 7,
+    "page_role": "process",
+    "slide_index": 4,
+    "title": "P&E 把全局规划显式拆开",
+    "layout": "main_with_group3_equal",
+    "rhythm": "hero+equal-triple-group",
+    "top_focus_ok": true,
+    "contrast_budget_ok": true,
+    "size_variety_ok": true,
+    "nested_pattern_ok": true
+  },
+  {
+    "source_slide_number": 8,
+    "page_role": "module",
+    "slide_index": 5,
+    "title": "Harness 决定系统能否稳定落地",
+    "layout": "main_with_group3_equal",
+    "rhythm": "hero+equal-triple-group",
+    "top_focus_ok": true,
+    "contrast_budget_ok": true,
+    "size_variety_ok": true,
+    "nested_pattern_ok": true
+  },
+  {
+    "source_slide_number": 11,
+    "page_role": "summary",
+    "slide_index": 6,
+    "title": "真正稳定的系统是三层协作",
+    "layout": "top_main_bar",
+    "rhythm": "hero+support+bottom-bar",
+    "top_focus_ok": true,
+    "contrast_budget_ok": true,
+    "size_variety_ok": true,
+    "nested_pattern_ok": true
+  }
+]
