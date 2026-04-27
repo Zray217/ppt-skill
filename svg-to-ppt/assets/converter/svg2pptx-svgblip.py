@@ -4,14 +4,64 @@ SVG → PPTX: 纯 SVG 嵌入，零 PNG，零 python-pptx。
 
 PPT 2016+ 原生 <a:svgBlip>，右键→转换为图形→可编辑。
 
+自动 resolve 图片：SVG 中的 <image href="images/xxx.jpg"> 相对路径
+会在打包时自动转为 base64 data URI，确保 PPTX 自包含。
+
 Usage:
     python3 svg2pptx-svgblip.py output.pptx slide1.svg [slide2.svg ...]
 """
 
-import sys, os, zipfile
+import sys, os, zipfile, base64, re
 
 CX = 12192000  # slide width EMU
 CY = 6858000   # slide height EMU
+
+
+def resolve_images(svg_bytes, svg_dir):
+    """Resolve relative image paths in SVG to base64 data URIs.
+    
+    Finds <image href="images/xxx.jpg"> and replaces with 
+    <image href="data:image/png;base64,..."> so the SVG is self-contained.
+    """
+    svg_text = svg_bytes.decode('utf-8', errors='replace')
+    
+    # Match <image ... href="images/xxx.yyy" ...>  or  <image ... xlink:href="images/xxx.yyy" ...>
+    # Pattern: href="path" where path doesn't start with "data:"
+    pattern = r'(<image\b[^>]*?\b(?:href|xlink:href)\s*=\s*")((?!data:)[^"]+)("[^>]*>)'
+    
+    def replacer(match):
+        prefix = match.group(1)
+        href = match.group(2)
+        suffix = match.group(3)
+        
+        # Resolve relative path
+        img_path = os.path.normpath(os.path.join(svg_dir, href))
+        
+        if not os.path.exists(img_path):
+            print(f"    ⚠ Image not found: {href} (looked: {img_path})")
+            return match.group(0)  # leave as-is
+        
+        # Read and encode
+        ext = os.path.splitext(img_path)[1].lower()
+        mime_map = {'.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.png': 'image/png',
+                    '.gif': 'image/gif', '.webp': 'image/webp', '.svg': 'image/svg+xml'}
+        mime = mime_map.get(ext, 'image/png')
+        
+        with open(img_path, 'rb') as f:
+            img_data = f.read()
+        
+        b64 = base64.b64encode(img_data).decode('ascii')
+        data_uri = f"data:{mime};base64,{b64}"
+        
+        size_kb = len(img_data) / 1024
+        print(f"    📷 {href} → base64 ({size_kb:.0f}KB)")
+        
+        return f"{prefix}{data_uri}{suffix}"
+    
+    # Run multiple times in case there are multiple images
+    result = re.sub(pattern, replacer, svg_text, flags=re.DOTALL)
+    
+    return result.encode('utf-8')
 
 
 def slide_xml(svg_rid="rId2"):
@@ -115,9 +165,13 @@ def convert(svg_files, output_path):
         for i, svg_path in enumerate(svg_files):
             slide_num = i + 1
             media_name = f"image{slide_num}.svg"
+            svg_dir = os.path.dirname(os.path.abspath(svg_path))
 
             with open(svg_path, "rb") as f:
                 svg_bytes = f.read()
+
+            # Resolve relative image paths → base64
+            svg_bytes = resolve_images(svg_bytes, svg_dir)
 
             z.writestr(f"ppt/media/{media_name}", svg_bytes)
             z.writestr(f"ppt/slides/slide{slide_num}.xml", slide_xml("rId2"))

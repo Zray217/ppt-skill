@@ -20,6 +20,7 @@ import re
 import base64
 import io
 import xml.etree.ElementTree as ET
+from typing import Optional, Union
 from pptx import Presentation
 from pptx.util import Emu, Pt
 from pptx.enum.shapes import MSO_SHAPE
@@ -50,7 +51,7 @@ NAMED_COLORS = {
 
 # ─── Color utilities ──────────────────────────────────────
 
-def parse_color(color_str: str) -> RGBColor | None:
+def parse_color(color_str: str) -> Optional[RGBColor]:
     if not color_str or color_str in ('none', 'transparent', ''):
         return None
     m = re.match(r'^#([0-9a-fA-F]{6})$', color_str)
@@ -66,7 +67,7 @@ def parse_color(color_str: str) -> RGBColor | None:
     return RGBColor(*c) if c else None
 
 
-def hex_to_rgb_tuple(hex_str: str) -> tuple[int, int, int] | None:
+def hex_to_rgb_tuple(hex_str: str) -> Optional[tuple[int, int, int]]:
     """Parse color string to (r,g,b) tuple."""
     c = parse_color(hex_str)
     return (c[0], c[1], c[2]) if c else None
@@ -139,6 +140,12 @@ class GradientDef:
         self.cx, self.cy, self.r = cx, cy, r
 
 
+def _pct(v):
+    v = v.strip()
+    if v.endswith('%'):
+        return float(v[:-1]) / 100.0
+    return float(v)
+
 def parse_gradients(root) -> dict[str, GradientDef]:
     """Extract all gradient definitions from SVG <defs>."""
     gradients = {}
@@ -154,8 +161,8 @@ def parse_gradients(root) -> dict[str, GradientDef]:
                 stops.append((offset, color))
             gradients[gid] = GradientDef(
                 gid, 'linear', stops,
-                x1=float(lg.get('x1', '0')), y1=float(lg.get('y1', '0')),
-                x2=float(lg.get('x2', '1')), y2=float(lg.get('y2', '0'))
+                x1=_pct(lg.get('x1', '0')), y1=_pct(lg.get('y1', '0')),
+                x2=_pct(lg.get('x2', '1')), y2=_pct(lg.get('y2', '0'))
             )
         
         for rg in defs.findall(f'{{{ns}}}radialGradient'):
@@ -167,8 +174,8 @@ def parse_gradients(root) -> dict[str, GradientDef]:
                 stops.append((offset, color))
             gradients[gid] = GradientDef(
                 gid, 'radial', stops,
-                cx=float(rg.get('cx', '0.5')), cy=float(rg.get('cy', '0.5')),
-                r=float(rg.get('r', '0.5'))
+                cx=_pct(rg.get('cx', '0.5')), cy=_pct(rg.get('cy', '0.5')),
+                r=_pct(rg.get('r', '0.5'))
             )
     
     return gradients
@@ -235,7 +242,7 @@ def apply_gradient_fill(shape, gradient: GradientDef):
 
 # ─── Opacity support ──────────────────────────────────────
 
-def apply_opacity(shape, opacity_str: str | None):
+def apply_opacity(shape, opacity_str: Optional[str]):
     """Apply opacity to shape fill via XML alpha channel."""
     if not opacity_str:
         return
@@ -372,7 +379,7 @@ class SvgToPptx:
         self._gradients: dict[str, GradientDef] = {}
         self._defs_elements: dict[str, ET.Element] = {}
     
-    def add_svg_slide(self, svg_string: str, bg_color: str | None = None):
+    def add_svg_slide(self, svg_string: str, bg_color: Optional[str] = None):
         slide = self.prs.slides.add_slide(self.blank_layout)
         
         if bg_color:
@@ -424,7 +431,7 @@ class SvgToPptx:
                 slide.background.fill.solid()
                 slide.background.fill.fore_color.rgb = bg
     
-    def _resolve_use(self, el) -> ET.Element | None:
+    def _resolve_use(self, el) -> Optional[ET.Element]:
         """Resolve <use> href to actual element."""
         href = el.get('href', '') or el.get(f'{{{SVG_NS}}}href', '')
         if href.startswith('#'):
@@ -493,7 +500,7 @@ class SvgToPptx:
     
     # ─── Fill / Stroke application ─────────────────────────
     
-    def _get_gradient_ref(self, fill_str: str) -> GradientDef | None:
+    def _get_gradient_ref(self, fill_str: str) -> Optional[GradientDef]:
         """Extract gradient ID from url(#id) reference."""
         m = re.match(r'url\(#(.+)\)', fill_str)
         if m:

@@ -23,6 +23,7 @@
 - 连续 3 页以上 Non-hero → 判为错误
 - 封面和结尾必须是 Hero 页
 - 每个章节开头建议有幕封或大字报作为 Hero 页
+- 每个 Hero 页建议有 `kicker`（标题上方的小钩子文字）
 
 ### 页面类型
 
@@ -47,6 +48,20 @@
 ### 重要：利用调研信息
 你将获得一些关于主题的搜索摘要。请务必参考这些信息来规划大纲，使其切合当前的市场现状或技术事实，而不是凭空捏造。
 
+### 用户无素材时：用叙事弧帮搭骨架
+
+如果用户只给了主题、没有任何素材，不要说"请提供内容"就停下——先用叙事弧帮他搭五段骨架：
+
+```
+钩子(Hook)       → 1 页   : 抛一个反差 / 问题 / 硬数据让人停下来
+定调(Context)    → 1-2 页 : 说明背景 / 你是谁 / 为什么讲这个
+主体(Core)       → 3-5 页 : 核心内容，用 Non-hero 布局穿插
+转折(Shift)      → 1 页   : 打破预期 / 提出新观点
+收束(Takeaway)   → 1-2 页 : 金句 / 悬念问题 / 行动建议
+```
+
+在 JSON 大纲的对应 page 里，`content` 字段可以先填"（待补充）"，但叙事弧结构必须完整。
+
 ### 输出规范
 请严格按照以下JSON格式输出，结果用[PPT_OUTLINE]和[/PPT_OUTLINE]包裹：
 [PPT_OUTLINE]
@@ -56,6 +71,7 @@
         "cover": {
             "title": "引人注目的主标题",
             "sub_title": "副标题",
+            "kicker": "全大写 · 场景标签",
             "page_type": "开场封面",
             "content": []
         },
@@ -69,18 +85,20 @@
                 "part_title": "第一部分：章节标题",
                 "section_cover": {
                     "title": "章节标题",
+                    "kicker": "ACT I · 章节主题",
                     "page_type": "章节幕封",
                     "content": []
                 },
                 "pages": [
                     {"title": "页面标题1", "page_type": "数据大字报", "content": []},
-                    {"title": "页面标题2", "page_type": "主从叙事", "content": []},
+                    {"title": "页面标题2", "page_type": "主从叙事", "image_prompt": "futuristic smart city, aerial view, dark blue tone, minimal style", "content": []},
                     {"title": "页面标题3", "page_type": "悬念问题", "content": []}
                 ]
             }
         ],
         "end_page": {
             "title": "总结与展望",
+            "kicker": "TAKEAWAY · 金句",
             "page_type": "大引用",
             "content": []
         }

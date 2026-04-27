@@ -1,0 +1,162 @@
+{
+    "ppt_outline": {
+        "theme": "靛蓝瓷",
+        "cover": {
+            "title": "设计师还能做什么",
+            "sub_title": "AI时代的设计师能力升级指南",
+            "kicker": "CRAFT &amp; CODE · INTERNAL DESIGN MEETUP 2026",
+            "page_type": "开场封面",
+            "content": []
+        },
+        "table_of_contents": {
+            "title": "今天的议程",
+            "page_type": "主从叙事",
+            "kicker": "AGENDA · 三个问题",
+            "content": [
+                "AI改变了什么——数据与现状",
+                "设计师新能力——4大维度升级",
+                "设计师不会被取代——因为创意与判断"
+            ]
+        },
+        "parts": [
+            {
+                "part_title": "第一部分：AI改变了什么",
+                "section_cover": {
+                    "title": "AI改变了什么",
+                    "kicker": "ACT I · THE AI LANDSCAPE",
+                    "page_type": "章节幕封",
+                    "content": []
+                },
+                "pages": [
+                    {
+                        "title": "67%的设计师已经在用AI",
+                        "page_type": "数据大字报",
+                        "kicker": "DATA · 2025 DESIGN SURVEY",
+                        "content": []
+                    },
+                    {
+                        "title": "AI工具全景图",
+                        "page_type": "主从叙事",
+                        "kicker": "TOOLS · 从生成到执行",
+                        "content": [
+                            {
+                                "main": {
+                                    "title": "设计工作流中的AI介入点",
+                                    "bullets": [
+                                        "创意探索：Midjourney / DALL-E 生成视觉方向",
+                                        "执行加速：Figma AI / Galileo AI 自动生成UI",
+                                        "文稿辅助：Claude GPT 重写/翻译/缩写"
+                                    ]
+                                }
+                            },
+                            {
+                                "child": {
+                                    "title": "生成式工具爆发",
+                                    "body": "图像 · 文案 · 代码 · 3D · 视频"
+                                }
+                            },
+                            {
+                                "child": {
+                                    "title": "执行层被压缩",
+                                    "body": "修图 · 排版 · 改稿 · 批量生成"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "part_title": "第二部分：设计师新能力",
+                "section_cover": {
+                    "title": "设计师新能力",
+                    "kicker": "ACT II · NEW DESIGNER CAPABILITIES",
+                    "page_type": "章节幕封",
+                    "content": []
+                },
+                "pages": [
+                    {
+                        "title": "4大核心能力升级",
+                        "page_type": "主卡+三等分",
+                        "kicker": "SKILLS · 能力矩阵",
+                        "content": [
+                            {
+                                "main": {
+                                    "title": "从执行者到创意导演",
+                                    "body": "设计师的核心价值从「做图」转向「定义问题、设定方向、评判结果」。AI接管执行，设计师负责决策。",
+                                    "highlight": "1:5",
+                                    "highlight_label": "人效提升"
+                                }
+                            },
+                            {
+                                "body": {
+                                    "title": "AI协同能力",
+                                    "body": "熟练掌握AI工具链，用自然语言驱动AI完成复杂任务，成为人机协作的桥梁。"
+                                }
+                            },
+                            {
+                                "body": {
+                                    "title": "战略思维能力",
+                                    "body": "理解商业目标，将设计决策与业务指标挂钩，用设计驱动增长而非只做视觉输出。"
+                                }
+                            },
+                            {
+                                "body": {
+                                    "title": "跨域整合能力",
+                                    "body": "打破设计边界，懂技术实现、懂用户心理、懂商业模式，成为真正的T型或π型人才。"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "part_title": "第三部分：设计师不会被取代",
+                "section_cover": {
+                    "title": "设计师不会被取代",
+                    "kicker": "ACT III · WHY DESIGNERS ENDURE",
+                    "page_type": "章节幕封",
+                    "content": []
+                },
+                "pages": [
+                    {
+                        "title": "会被AI取代的，是哪种设计师？",
+                        "page_type": "悬念问题",
+                        "kicker": "THE QUESTION · 留给你的问题",
+                        "content": []
+                    },
+                    {
+                        "title": "纯执行 vs 战略创意",
+                        "page_type": "双主对比",
+                        "kicker": "CONTRAST · 两种设计师",
+                        "content": [
+                            {
+                                "main": {
+                                    "title": "纯执行型设计师",
+                                    "body": "只做视觉输出，不问为什么；等待需求，不主动定义问题；技能单一，替代性高。",
+                                    "metric": "高风险",
+                                    "metric_label": "可被AI替代"
+                                }
+                            },
+                            {
+                                "main": {
+                                    "title": "战略创意型设计师",
+                                    "body": "定义正确的问题；整合多方利益相关者；做出没有人做过的决定；AI是其超级助手而非替代者。",
+                                    "metric": "低风险",
+                                    "metric_label": "AI增强而非替代"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "end_page": {
+            "title": "最好的设计，是提出正确的问题",
+            "kicker": "TAKEAWAY · 金句收尾",
+            "page_type": "大引用",
+            "content": [
+                "设计师的价值，不在于画得多好，而在于看得够准、想得够深、决策够勇敢。AI时代，这是最好的时代，也是最考验我们的时代。"
+            ]
+        }
+    }
+}

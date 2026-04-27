@@ -13,7 +13,7 @@ SVG → PPTX 转换的质量保证清单。生成 PPT 后逐项对照。
 - [ ] 每个章节之间有幕封或数据大字报作为呼吸页
 
 ### 2. 字体三级分工
-- [ ] 大标题/金句使用衬线体 (Georgia, "Noto Serif SC", serif)
+- [ ] 大标题/金句/核心数据使用衬线体 (Georgia / Noto Serif SC)
 - [ ] 正文/列表使用非衬线体 ("PingFang SC", "Microsoft YaHei", sans-serif)
 - [ ] 数据/页码/标注使用等宽体 ("SF Mono", "Fira Code", monospace)
 - [ ] 同一页不混用超过 2 种字体族
