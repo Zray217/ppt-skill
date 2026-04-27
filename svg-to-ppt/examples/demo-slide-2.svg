@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <!-- Background -->
+  <rect x="0" y="0" width="1280" height="720" fill="#FAFAF9" />
+  
+  <!-- Top accent line -->
+  <rect x="0" y="0" width="1280" height="4" fill="#DC2626" />
+  
+  <!-- Title area -->
+  <text x="80" y="80" font-family="Georgia, serif" font-size="42" font-weight="bold" fill="#1C1917">技术路线图</text>
+  <text x="80" y="120" font-family="Arial, sans-serif" font-size="18" fill="#78716C">Technical Roadmap · Q1-Q4 2026</text>
+  
+  <!-- Timeline line -->
+  <line x1="80" y1="180" x2="1200" y2="180" stroke="#D6D3D1" stroke-width="3" />
+  
+  <!-- Timeline nodes -->
+  <circle cx="200" cy="180" r="12" fill="#DC2626" />
+  <circle cx="480" cy="180" r="12" fill="#EA580C" />
+  <circle cx="760" cy="180" r="12" fill="#CA8A04" />
+  <circle cx="1040" cy="180" r="12" fill="#16A34A" />
+  
+  <!-- Q1 Card -->
+  <rect x="100" y="210" width="240" height="200" rx="8" fill="#FFFFFF" stroke="#E7E5E4" stroke-width="1" />
+  <rect x="100" y="210" width="240" height="6" rx="3" fill="#DC2626" />
+  <text x="130" y="250" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#DC2626">Q1 · 基础搭建</text>
+  <text x="130" y="285" font-family="Arial, sans-serif" font-size="14" fill="#57534E">• SVG 解析引擎</text>
+  <text x="130" y="310" font-family="Arial, sans-serif" font-size="14" fill="#57534E">• 基础形状映射</text>
+  <text x="130" y="335" font-family="Arial, sans-serif" font-size="14" fill="#57534E">• rect/circle/text</text>
+  <text x="130" y="360" font-family="Arial, sans-serif" font-size="14" fill="#57534E">• CLI 工具 v0.1</text>
+  
+  <!-- Q2 Card -->
+  <rect x="380" y="210" width="240" height="200" rx="8" fill="#FFFFFF" stroke="#E7E5E4" stroke-width="1" />
+  <rect x="380" y="210" width="240" height="6" rx="3" fill="#EA580C" />
+  <text x="410" y="250" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#EA580C">Q2 · 路径支持</text>
+  <text x="410" y="285" font-family="Arial, sans-serif" font-size="14" fill="#57534E">• path → freeform</text>
+  <text x="410" y="310" font-family="Arial, sans-serif" font-size="14" fill="#57534E">• 贝塞尔曲线转换</text>
+  <text x="410" y="335" font-family="Arial, sans-serif" font-size="14" fill="#57534E">• 渐变填充</text>
+  <text x="410" y="360" font-family="Arial, sans-serif" font-size="14" fill="#57534E">• 分组嵌套</text>
+  
+  <!-- Q3 Card -->
+  <rect x="660" y="210" width="240" height="200" rx="8" fill="#FFFFFF" stroke="#E7E5E4" stroke-width="1" />
+  <rect x="660" y="210" width="240" height="6" rx="3" fill="#CA8A04" />
+  <text x="690" y="250" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#CA8A04">Q3 · 多页 PPT</text>
+  <text x="690" y="285" font-family="Arial, sans-serif" font-size="14" fill="#57534E">• 批量 SVG → PPTX</text>
+  <text x="690" y="310" font-family="Arial, sans-serif" font-size="14" fill="#57534E">• 主题色系统</text>
+  <text x="690" y="335" font-family="Arial, sans-serif" font-size="14" fill="#57534E">• 页眉页脚</text>
+  <text x="690" y="360" font-family="Arial, sans-serif" font-size="14" fill="#57534E">• 布局模板</text>
+  
+  <!-- Q4 Card -->
+  <rect x="940" y="210" width="240" height="200" rx="8" fill="#FFFFFF" stroke="#E7E5E4" stroke-width="1" />
+  <rect x="940" y="210" width="240" height="6" rx="3" fill="#16A34A" />
+  <text x="970" y="250" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#16A34A">Q4 · Skill 集成</text>
+  <text x="970" y="285" font-family="Arial, sans-serif" font-size="14" fill="#57534E">• OpenClaw Skill</text>
+  <text x="970" y="310" font-family="Arial, sans-serif" font-size="14" fill="#57534E">• 端到端工作流</text>
+  <text x="970" y="335" font-family="Arial, sans-serif" font-size="14" fill="#57534E">• 质量自检系统</text>
+  <text x="970" y="360" font-family="Arial, sans-serif" font-size="14" fill="#57534E">• 文档 &amp; 发布</text>
+  
+  <!-- Bottom stats bar -->
+  <rect x="80" y="460" width="1120" height="80" rx="8" fill="#F5F5F4" />
+  <text x="200" y="510" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1C1917" text-anchor="middle">8+</text>
+  <text x="200" y="530" font-family="Arial, sans-serif" font-size="12" fill="#78716C" text-anchor="middle">SVG 元素</text>
+  
+  <text x="480" y="510" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1C1917" text-anchor="middle">100%</text>
+  <text x="480" y="530" font-family="Arial, sans-serif" font-size="12" fill="#78716C" text-anchor="middle">矢量保真</text>
+  
+  <text x="760" y="510" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1C1917" text-anchor="middle">0</text>
+  <text x="760" y="530" font-family="Arial, sans-serif" font-size="12" fill="#78716C" text-anchor="middle">图片依赖</text>
+  
+  <text x="1040" y="510" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1C1917" text-anchor="middle">∞</text>
+  <text x="1040" y="530" font-family="Arial, sans-serif" font-size="12" fill="#78716C" text-anchor="middle">缩放无损</text>
+  
+  <!-- Bottom text -->
+  <text x="80" y="620" font-family="Arial, sans-serif" font-size="14" fill="#A8A29E">Phase 1: 闭环验证 → Phase 2: 增强质量 → Phase 3: 产品化</text>
+  
+  <!-- Footer -->
+  <text x="80" y="680" font-family="Arial, sans-serif" font-size="12" fill="#D6D3D1">svg-to-ppt-skill</text>
+  <text x="1200" y="680" font-family="Arial, sans-serif" font-size="12" fill="#D6D3D1" text-anchor="end">2026.04</text>
+</svg>
